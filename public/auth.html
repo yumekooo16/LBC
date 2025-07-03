@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lebonchoix - Connexion / Inscription</title>
+    <link rel="stylesheet" href="./css/css/auth/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Connexion / Inscription</h1>
+      <p class="subtitle">Accédez à votre espace personnel ou créez un compte</p>
+      <div class="main-links">
+        <a href="index.html" class="liquid-btn">Accueil</a>
+        <a href="annonces.html" class="liquid-btn">Annonces</a>
+      </div>
+      <h2>Inscription</h2>
+      <form id="signupForm">
+        <div>
+          <label for="signupEmail">Email:</label>
+          <input type="email" id="signupEmail" name="email" required />
+        </div>
+        <div>
+          <label for="signupPassword">Mot de passe:</label>
+          <input type="password" id="signupPassword" name="password" required />
+        </div>
+        <div>
+          <label for="signupPseudo">Pseudo:</label>
+          <input type="text" id="signupPseudo" name="pseudo" required />
+        </div>
+        <div>
+          <label for="signupPrenom">Prénom:</label>
+          <input type="text" id="signupPrenom" name="prenom" required />
+        </div>
+        <div>
+          <label for="signupNom">Nom:</label>
+          <input type="text" id="signupNom" name="nom" required />
+        </div>
+        <div>
+          <label for="signupTelephone">Téléphone:</label>
+          <input type="text" id="signupTelephone" name="telephone" required />
+        </div>
+        <div>
+          <label for="signupLocalite">Localité:</label>
+          <input type="text" id="signupLocalite" name="localite" required />
+        </div>
+        <button type="submit">S'inscrire</button>
+      </form>
+      <div id="signupMessage" class="form-message"></div>
+      <h2>Connexion</h2>
+      <form id="loginForm">
+        <div>
+          <label for="loginEmail">Email:</label>
+          <input type="email" id="loginEmail" name="email" required />
+        </div>
+        <div>
+          <label for="loginPassword">Mot de passe:</label>
+          <input type="password" id="loginPassword" name="password" required />
+        </div>
+        <button type="submit">Se connecter</button>
+      </form>
+      <div id="loginMessage" class="form-message"></div>
+      <button id="gotoAnnoncesBtn" style="margin-top: 30px">Accéder aux annonces</button>
+      <button id="logoutButton" style="margin-top: 10px">Se déconnecter</button>
+      <button id="deleteAccountButton" style="margin-top: 10px; background: #dc3545">Supprimer mon compte</button>
+      <div id="logoutMessage" class="form-message"></div>
+      <div class="footer">
+        <p>Projet ECF Lebonchoix</p>
+      </div>
+    </div>
+    <script src="/JS/auth.js"></script>
+  </body>
+</html>

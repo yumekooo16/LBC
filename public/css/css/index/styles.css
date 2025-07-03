@@ -1,0 +1,258 @@
+/* --- Liquid Glass iOS 26 Style - Mobile First Corrigé et Amélioré --- */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'SF Pro Display', 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0e7ef 0%, #f7fafd 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Ceci est crucial pour cacher tout débordement horizontal */
+}
+
+/* Assurez-vous que toutes les images sont responsives */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Évite les espaces sous les images */
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border-radius: 24px;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  width: 96vw;
+  max-width: 420px; /* Limite la largeur sur les grands mobiles/petites tablettes */
+  margin: 32px auto 0 auto;
+  padding: 28px 5vw 24px 5vw;
+  text-align: center;
+  transition: box-shadow 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+.container:hover {
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.22);
+}
+
+h1 {
+  color: #222;
+  font-size: 1.5em;
+  margin-bottom: 8px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
+}
+h2, h3 { /* Ajouté pour les titres h2 et h3 présents sur la page annonces.html */
+  color: #222;
+  font-size: 1.3em;
+  margin-bottom: 12px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
+}
+.subtitle {
+  color: #007aff;
+  font-size: 1.08em;
+  margin-bottom: 18px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 6px rgba(255, 255, 255, 0.5);
+}
+
+p, label {
+  color: #444;
+  font-size: 1em;
+}
+
+.main-links {
+  margin: 28px 0 18px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.liquid-btn,
+form button, .fetch-btn, .edit-btn, .delete-btn, #gotoAuthBtn, #logoutButton {
+  display: block;
+  padding: 14px 0;
+  width: 100%;
+  font-size: 1.08em;
+  background: rgba(255,255,255,0.22);
+  color: #222;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 2px 12px rgba(176, 196, 216, 0.1);
+  border: 1.5px solid rgba(255,255,255,0.35);
+  backdrop-filter: blur(8px);
+  transition: background 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.liquid-btn:last-child {
+  background: rgba(0,191,165,0.18);
+  color: #009e88;
+}
+
+.liquid-btn:hover,
+form button:hover, .fetch-btn:hover, .edit-btn:hover, .delete-btn:hover, #gotoAuthBtn:hover, #logoutButton:hover {
+  background: rgba(255,255,255,0.38);
+  color: #007aff;
+  box-shadow: 0 4px 18px rgba(176, 196, 216, 0.16);
+}
+
+.liquid-btn:last-child:hover {
+  background: rgba(0,191,165,0.28);
+  color: #00796b;
+}
+
+/* Styles pour les champs de formulaire */
+form {
+  margin: 18px 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: stretch;
+}
+form input, form select, form textarea {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1.5px solid #e0e7ef;
+  background: rgba(255,255,255,0.55);
+  font-size: 1em;
+  margin-top: 4px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border 0.2s ease-in-out;
+}
+form input:focus, form select:focus, form textarea:focus {
+  border: 1.5px solid #007aff;
+}
+
+.form-message {
+  margin: 8px 0 0 0;
+  color: #e53935;
+  font-size: 0.98em;
+  min-height: 1.2em;
+}
+
+/* Styles pour les listes d'annonces */
+ul#allAnnoncesList {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0 0;
+}
+ul#allAnnoncesList li {
+  background: rgba(255,255,255,0.45);
+  border-radius: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 12px rgba(176, 196, 216, 0.1);
+  padding: 18px 14px;
+  text-align: left;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  backdrop-filter: blur(8px);
+  transition: box-shadow 0.2s ease-in-out;
+}
+ul#allAnnoncesList li:hover {
+  box-shadow: 0 4px 18px rgba(176, 196, 216, 0.16);
+}
+
+/* Styles pour les détails d'annonce */
+#annonceDetails {
+  margin-top: 24px;
+  background: rgba(255,255,255,0.45);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(176, 196, 216, 0.1);
+  padding: 18px 14px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  backdrop-filter: blur(8px);
+}
+
+/* Styles pour l'aperçu de l'image créée */
+#createdAnnonceImagePreview img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px rgba(176, 196, 216, 0.1);
+}
+
+.container .footer {
+  margin-top: 32px;
+  color: #7a869a;
+  font-size: 0.98em;
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Media Queries pour les écrans plus larges */
+@media (min-width: 600px) {
+  .container {
+    padding: 40px 32px 32px 32px;
+    width: 420px; /* Conserve la même largeur maximale pour le conteneur */
+    margin-top: 40px;
+  }
+  h1 {
+    font-size: 2.2em;
+  }
+  h2, h3 {
+    font-size: 1.8em;
+  }
+  .liquid-btn,
+  form button, .fetch-btn, .edit-btn, .delete-btn, #gotoAuthBtn, #logoutButton {
+    font-size: 1.18em;
+    padding: 18px 44px;
+    width: auto;
+    min-width: 220px;
+  }
+}
+
+/* --- En-tête façon glass --- */
+.main-header-leboncoin {
+  background: rgba(255,255,255,0.25);
+  box-shadow: 0 2px 16px rgba(176, 196, 216, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 14px 0 10px 0;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 18px 18px;
+  z-index: 100;
+  border-bottom: 1.5px solid rgba(255,255,255,0.25);
+  width: 100%;
+  position: sticky;
+  top: 0;
+}
+
+.header-btn {
+  padding: 10px 18px;
+ 
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+  box-shadow: 0 1px 8px rgba(176, 196, 216, 0.1);
+  background: rgba(255,255,255,0.22);
+  color: #222;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  backdrop-filter: blur(8px);
+}
+.header-btn:hover {
+  background: rgba(255,255,255,0.38);
+  color: #007aff;
+  box-shadow: 0 2px 16px rgba(176, 196, 216, 0.16);
+}

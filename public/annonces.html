@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <script src="JS/script.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lebonchoix - Annonces</title>
+    <link rel="stylesheet" href="./css/css/annonces/styles.css" />
+  </head>
+  <body>
+    <script src="JS/header.js" defer></script>
+    <div class="container">
+      <h1>Annonces</h1>
+      <p class="subtitle">Parcourez ou publiez vos annonces en toute simplicité</p>
+
+      <div class="main-links">
+        <a href="index.html" class="liquid-btn">Accueil</a>
+        <a href="auth.html" id="gotoAuthBtn" class="liquid-btn">Connexion / Inscription</a>
+        <a href="#" id="logoutButton" class="liquid-btn">Se déconnecter</a>
+      </div>
+      <div id="logoutMessage" class="form-message"></div>
+
+      <h2>Créer une Annonce</h2>
+      <form id="createAnnonceForm" enctype="multipart/form-data">
+        <div>
+          <label for="annonceTitre">Titre:</label>
+          <input type="text" id="annonceTitre" name="titre" required />
+        </div>
+        <div>
+          <label for="annonceDescription">Description:</label>
+          <textarea id="annonceDescription" name="description" rows="3" required></textarea>
+        </div>
+        <div>
+          <label for="annoncePrix">Prix:</label>
+          <input type="number" id="annoncePrix" name="prix" step="0.01" required />
+        </div>
+        <div>
+          <label for="annonceLocalite">Localité:</label>
+          <input type="text" id="annonceLocalite" name="localite" required />
+        </div>
+        <div>
+          <label for="annonceCategoryId">Catégorie :</label>
+          <select id="annonceCategoryId" name="category_id" required>
+            <option value="">-- Sélectionner une catégorie --</option>
+            <option value="1">Immobilier</option>
+            <option value="2">Véhicules</option>
+            <option value="3">Services</option>
+            <option value="4">Multimédia</option>
+            <option value="5">Maison & Jardin</option>
+          </select>
+        </div>
+        <div>
+          <label for="annonceImage">Image(s) (optionnel, jusqu'à 5):</label>
+          <input type="file" id="annonceImage" name="images" accept="image/*" multiple />
+        </div>
+        <button type="submit">Créer Annonce</button>
+      </form>
+      <div id="createAnnonceMessage" class="form-message"></div>
+      <div id="createdAnnonceImagePreview"></div>
+
+      <h2>Consulter toutes les Annonces</h2>
+      <button id="getAllAnnoncesButton" class="fetch-btn">Charger toutes les Annonces</button>
+      <div id="getAllAnnoncesMessage" class="form-message"></div>
+      <ul id="allAnnoncesList"></ul>
+
+      <div id="annonceDetails" style="margin-top: 20px"></div>
+
+      <div id="updateAnnonceFormContainer" style="display: none">
+        <h3>Modifier Annonce</h3>
+        <form id="updateAnnonceForm">
+          <input type="hidden" id="updateAnnonceHiddenId" name="id" />
+          <div>
+            <label for="updateAnnonceTitre">Titre:</label>
+            <input type="text" id="updateAnnonceTitre" name="titre" />
+          </div>
+          <div>
+            <label for="updateAnnonceDescription">Description:</label>
+            <textarea id="updateAnnonceDescription" name="description" rows="3"></textarea>
+          </div>
+          <div>
+            <label for="updateAnnoncePrix">Prix:</label>
+            <input type="number" id="updateAnnoncePrix" name="prix" step="0.01" />
+          </div>
+          <div>
+            <label for="updateAnnonceLocalite">Localité:</label>
+            <input type="text" id="updateAnnonceLocalite" name="localite" />
+          </div>
+          <div>
+            <label for="updateAnnonceCategoryId">ID Catégorie:</label>
+            <input type="number" id="updateAnnonceCategoryId" name="category_id" />
+          </div>
+          <button type="submit" class="edit-btn">Appliquer Modifications</button>
+          <button type="button" id="cancelUpdateAnnonce" class="delete-btn">Annuler</button>
+        </form>
+        <div id="updateAnnonceMessage" class="form-message"></div>
+      </div>
+
+      <div class="footer">
+        <p>Projet ECF Lebonchoix</p>
+      </div>
+    </div>
+    <script src="/JS/annonces.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil utilisateur - Lebonchoix</title>
+    <link rel="stylesheet" href="./css/css/profil/styles.css" />
+    <script src="JS/header.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Mon Profil</h1>
+      <p class="subtitle">Gérez vos informations et vos annonces</p>
+      <div class="main-links">
+        <a href="index.html" class="liquid-btn">Accueil</a>
+        <a href="annonces.html" class="liquid-btn">Annonces</a>
+      </div>
+      <div id="profilContent" class="profil-content">
+        <div id="profilLoading">Chargement du profil...</div>
+        <div id="profilInfo" class="profil-info">
+          <p><strong>Pseudo :</strong> <span id="profilPseudo"></span></p>
+          <p><strong>Localisation :</strong> <span id="profilLocalite"></span></p>
+          <p><strong>Téléphone :</strong> <span id="profilTelephone"></span></p>
+        </div>
+        <div id="profilError" class="profil-error"></div>
+        <div id="mesAnnoncesSection" class="mes-annonces-section">
+          <h3 class="mes-annonces-title">Mes annonces publiées</h3>
+          <div id="mesAnnoncesList"></div>
+        </div>
+      </div>
+      <div class="footer">
+        <p>Projet ECF Lebonchoix</p>
+      </div>
+    </div>
+    <script src="JS/profil.js"></script>
+  </body>
+</html>
